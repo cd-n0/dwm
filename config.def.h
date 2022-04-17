@@ -121,7 +121,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 
-
 /* gaps */
 	{ MODKEY,              		XK_z,      incrgaps,       {.i = +1 } },
 	{ MODKEY,    			XK_x,      incrgaps,       {.i = -1 } },

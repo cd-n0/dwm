@@ -99,26 +99,29 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
-
 /*
  * Xresources preferences to load at startup
  */
 ResourcePref resources[] = {
-		{ "fonts",              STRING,  &fonts },
-		{ "dmenufont",          STRING,  &dmenufont },
-		{ "normbgcolor",        STRING,  &normbgcolor },
-		{ "normbordercolor",    STRING,  &normbordercolor },
-		{ "normfgcolor",        STRING,  &normfgcolor },
-		{ "selbgcolor",         STRING,  &selbgcolor },
-		{ "selbordercolor",     STRING,  &selbordercolor },
-		{ "selfgcolor",         STRING,  &selfgcolor },
-		{ "borderpx",          	INTEGER, &borderpx },
-		{ "snap",          	INTEGER, &snap },
-		{ "showbar",          	INTEGER, &showbar },
-		{ "topbar",          	INTEGER, &topbar },
-		{ "nmaster",          	INTEGER, &nmaster },
-		{ "resizehints",       	INTEGER, &resizehints },
-		{ "mfact",      	FLOAT,   &mfact },
+		{ "dwm.color0",		STRING,	&normbordercolor },
+		{ "dwm.color8",		STRING,	&selbordercolor },
+		{ "dwm.color0",		STRING,	&normbgcolor },
+		{ "dwm.color4",		STRING,	&normfgcolor },
+		{ "dwm.color0",		STRING,	&selfgcolor },
+		{ "dwm.color4",		STRING,	&selbgcolor },
+		{ "borderpx",		INTEGER, &borderpx },
+		{ "snap",		INTEGER, &snap },
+		{ "showbar",		INTEGER, &showbar },
+		{ "topbar",		INTEGER, &topbar },
+		{ "nmaster",		INTEGER, &nmaster },
+		{ "resizehints",	INTEGER, &resizehints },
+		{ "mfact",		FLOAT,	&mfact },
+		{ "gappih",		STRING, &gappih },
+		{ "gappiv",		STRING, &gappiv },
+		{ "gappoh",		STRING, &gappoh },
+		{ "gappov",		STRING, &gappov },
+		{ "swallowfloating",	STRING, &swallowfloating },
+		{ "smartgaps",		STRING, &smartgaps },
 };
 
 

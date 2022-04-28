@@ -17,7 +17,7 @@ static unsigned int snap      = 32;       /* snap pixel */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static const char dmenufont[]       = "monospace:size=10";
-static const char *fonts[]          = {"monospace:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true"};
+static const char *fonts[]          = {"Arial:size=12", "JoyPixels:pixelsize=10:antialias=true:autohint=true"};
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -42,7 +42,7 @@ static const Rule rules[] = {
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ "Steam", "Steam", "Steam",           0,         0,          0,           1,        -1 },
+//	{ "Steam", "Steam", "Steam",           0,         0,          0,           1,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 

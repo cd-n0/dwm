@@ -17,7 +17,7 @@ static unsigned int snap      = 32;       /* snap pixel */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static const char dmenufont[]       = "monospace:size=10";
-static const char *fonts[]          = {"Arial:size=12", "JoyPixels:pixelsize=10:antialias=true:autohint=true"};
+static const char *fonts[]          = {"Monospace:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true"};
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -217,8 +217,8 @@ static Key keys[] = {
 	{ MODKEY,			XK_F6,		spawn,		SHCMD("torwrap") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("td-toggle") },
 	{ MODKEY,			XK_F8,		spawn,		SHCMD("mw -Y") },
-	{ MODKEY,			XK_F9,		spawn,		SHCMD("krita") },
-	{ MODKEY,			XK_F10,		spawn,		SHCMD(" -e rrs") },
+	{ MODKEY,			XK_F9,		spawn,		SHCMD("setxkbmap us") },
+	{ MODKEY,			XK_F10,		spawn,		SHCMD("setxkbmap tr") },
 	{ MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
 	{ MODKEY,			XK_F12,		spawn,		SHCMD("remaps & notify-send \\\"⌨️ Keyboard remapping...\\\" \\\"Re-running keyboard defaults for any newly plugged-in keyboards.\\\"") },
 

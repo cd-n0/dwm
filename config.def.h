@@ -44,7 +44,7 @@ static const Rule rules[] = {
 	{ "Brave",   NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "discord", NULL,     NULL,           1 << 6,    0,          0,          -1,        -1 },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ "Steam", "Steam", "Steam",           1 << 7,    0,          1,           0,        -1 },
+	{ "Steam", "Steam", "Steam",           1 << 7,    0,          0,           1,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
@@ -260,8 +260,9 @@ static Key keys[] = {
 	{ 0, XF86XK_Launch1,		spawn,		SHCMD("xset dpms force off") },
 	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("(synclient | grep 'TouchpadOff.*1' && synclient TouchpadOff=0) || synclient TouchpadOff=1") },
 //Razer keyboard macro key thingie
-	{ 0, XF86XK_Tools,	spawn,		SHCMD("lutris") },
-	{ 0, XF86XK_Launch5,	spawn,		SHCMD("discord-canary") },
+	{ 0, XF86XK_Tools,	spawn,		SHCMD("") },
+	{ 0, XF86XK_Launch5,	spawn,		SHCMD("") },
+// discord-canary --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy
 	{ 0, XF86XK_Launch6,	spawn,		SHCMD("steam") },
 //	{ 0, XF86XK_Launch7,	spawn,		SHCMD("") },
 //	{ 0, XF86XK_Launch8,	spawn,		SHCMD("") },

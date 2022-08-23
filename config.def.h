@@ -22,7 +22,7 @@ static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#ffff00";
+static char selbordercolor[]        = "#5000AB";
 static char selbgcolor[]            = "#005577";
 static char *colors[][3] = {
        /*               fg           bg           border   */
@@ -42,7 +42,6 @@ static const Rule rules[] = {
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "Brave",   NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "discord", NULL,     NULL,           1 << 6,    0,          0,          -1,        -1 },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ "Steam", "Steam", "Steam",           1 << 7,    0,          0,           1,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
@@ -261,7 +260,7 @@ static Key keys[] = {
 	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("(synclient | grep 'TouchpadOff.*1' && synclient TouchpadOff=0) || synclient TouchpadOff=1") },
 //Razer keyboard macro key thingie
 	{ 0, XF86XK_Tools,	spawn,		SHCMD("") },
-	{ 0, XF86XK_Launch5,	spawn,		SHCMD("") },
+	{ 0, XF86XK_Launch5,	spawn,		SHCMD("keym") },
 // discord-canary --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy
 	{ 0, XF86XK_Launch6,	spawn,		SHCMD("steam") },
 //	{ 0, XF86XK_Launch7,	spawn,		SHCMD("") },

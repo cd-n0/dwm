@@ -1536,7 +1536,7 @@ run(void)
 void
 autoRun(void)
 {
-	system("export STATUSBAR=\"dwmblocks\" ; killall dwmblocks ; dwmblocks &");
+	system(" killall slstatus; slstatus &");
 }
 
 void

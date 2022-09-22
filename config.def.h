@@ -55,6 +55,10 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
+static const int lpm[] = {
+        /* Index of preferred layout], if LENGTH(lpm)<#monitors -> default layout */
+        0, 1
+};
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */

@@ -261,12 +261,12 @@ static Key keys[] = {
 	{ 0, XF86XK_Launch1,		spawn,		SHCMD("xset dpms force off") },
 	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("(synclient | grep 'TouchpadOff.*1' && synclient TouchpadOff=0) || synclient TouchpadOff=1") },
 //Razer keyboard macro key thingie
-	{ 0, XF86XK_Tools,	spawn,		SHCMD("") },
+	{ 0, XF86XK_Tools,	spawn,		SHCMD("gimp") },
 	{ 0, XF86XK_Launch5,	spawn,		SHCMD("keym") },
 // discord-canary --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy
 	{ 0, XF86XK_Launch6,	spawn,		SHCMD("steam") },
-//	{ 0, XF86XK_Launch7,	spawn,		SHCMD("") },
-//	{ 0, XF86XK_Launch8,	spawn,		SHCMD("") },
+	{ 0, XF86XK_Launch7,	spawn,		SHCMD("pactl set-source-mute $(pactl get-default-source) toggle") },
+	{ 0, XF86XK_Launch8,	spawn,		SHCMD("pactl set-sink-mute $(pactl get-default-sink) toggle") },
 
 	{ 0, XF86XK_TouchpadOff,	spawn,		SHCMD("synclient TouchpadOff=1") },
 	{ 0, XF86XK_TouchpadOn,		spawn,		SHCMD("synclient TouchpadOff=0") },

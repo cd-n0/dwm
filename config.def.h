@@ -7,8 +7,8 @@
 /* appearance */
 static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappoh    = 20;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 40;       /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 
@@ -183,7 +183,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_i,	   setlayout,	   {.v = &layouts[7]} }, /* nrowgrid */
 
 /* music player */
-	{ MODKEY,			XK_m,			spawn,		SHCMD(TERMINAL " -e ncmpcpp") },
+	{ MODKEY,			XK_m,			spawn,		SHCMD(TERMINAL " -e ncmpcpp-ueberzug") },
 	{ MODKEY|ShiftMask,		XK_m,			spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_apostrophe,		spawn,		SHCMD("mpc prev") },
 	{ MODKEY|ShiftMask,		XK_apostrophe,		spawn,		SHCMD("mpc seek 0%") },
@@ -221,7 +221,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_F9,		spawn,		SHCMD("setxkbmap us") },
 	{ MODKEY,			XK_F10,		spawn,		SHCMD("setxkbmap tr") },
 	{ MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
-	{ MODKEY,			XK_F12,		spawn,		SHCMD("remaps & notify-send \\\"⌨️ Keyboard remapping...\\\" \\\"Re-running keyboard defaults for any newly plugged-in keyboards.\\\"") },
+	{ ShiftMask,			XK_Pause,	spawn,		SHCMD("remaps & notify-send \\\"⌨️ Keyboard remapping...\\\" \\\"Re-running keyboard defaults for any newly plugged-in keyboards.\\\"") },
 
 	{ MODKEY,			XK_n,		spawn,		SHCMD(TERMINAL " -e nvim -c VimwikiIndex") },
 	{ MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD(TERMINAL " -e newsboat; pkill -RTMIN+6 dwmblocks") },
@@ -261,10 +261,9 @@ static Key keys[] = {
 	{ 0, XF86XK_Launch1,		spawn,		SHCMD("xset dpms force off") },
 	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("(synclient | grep 'TouchpadOff.*1' && synclient TouchpadOff=0) || synclient TouchpadOff=1") },
 //Razer keyboard macro key thingie
-	{ 0, XF86XK_Tools,	spawn,		SHCMD("gimp") },
-	{ 0, XF86XK_Launch5,	spawn,		SHCMD("keym") },
-// discord-canary --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy
-	{ 0, XF86XK_Launch6,	spawn,		SHCMD("steam") },
+//	{ 0, XF86XK_Tools,	spawn,		SHCMD("") },
+//	{ 0, XF86XK_Launch5,	spawn,		SHCMD("") },
+//	{ 0, XF86XK_Launch6,	spawn,		SHCMD("") },
 	{ 0, XF86XK_Launch7,	spawn,		SHCMD("pactl set-source-mute $(pactl get-default-source) toggle") },
 	{ 0, XF86XK_Launch8,	spawn,		SHCMD("pactl set-sink-mute $(pactl get-default-sink) toggle") },
 

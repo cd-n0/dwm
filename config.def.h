@@ -15,14 +15,14 @@ static const int swallowfloating    = 0;        /* 1 means swallow floating wind
 static unsigned int borderpx  = 3;        /* border pixel of windows */
 static unsigned int snap      = 32;       /* snap pixel */
 static int showbar            = 1;        /* 0 means no bar */
-static int topbar             = 1;        /* 0 means bottom bar */
+static int topbar             = 0;        /* 0 means bottom bar */
 static const char dmenufont[]       = "monospace:size=10";
 static const char *fonts[]          = {"Monospace:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true"};
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#5000AB";
+static char selbordercolor[]        = "#ff00ab";
 static char selbgcolor[]            = "#005577";
 static char *colors[][3] = {
        /*               fg           bg           border   */

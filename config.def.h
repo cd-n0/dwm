@@ -43,7 +43,8 @@ static const Rule rules[] = {
 	{ "Krita",   NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Ghidra",  NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ "Steam", "Steam", "Steam",           1 << 7,    0,          0,           1,        -1 },
+	{ "Steam",   NULL,     NULL,           1 << 7,    0,          0,           1,        -1 },
+	{ "steam",   NULL,     NULL,           1 << 7,    0,          0,           1,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
@@ -186,7 +187,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_i,	   setlayout,	   {.v = &layouts[7]} }, /* nrowgrid */
 
 /* music player */
-	{ MODKEY,			XK_m,			spawn,		SHCMD(TERMINAL " -e ncmpcpp-ueberzug") },
+	{ MODKEY,			XK_m,			spawn,		SHCMD(TERMINAL " -e ncmpcpp") },
 	{ MODKEY|ShiftMask,		XK_m,			spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_apostrophe,		spawn,		SHCMD("mpc prev") },
 	{ MODKEY|ShiftMask,		XK_apostrophe,		spawn,		SHCMD("mpc seek 0%") },
@@ -207,7 +208,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },
 	{ MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("passmenu") },
 	{ MODKEY,			XK_grave,	spawn,		SHCMD("dmenuunicode") },
-	{ MODKEY,			XK_Home,	spawn,		SHCMD("killall -USR1 gpu-screen-recorder") },
+	{ MODKEY,			XK_Home,	spawn,		SHCMD("export RECPID=$(cat /tmp/recpid.txt) && kill -USR1 $RECPID && notify-send Clipped") },
 
 	{ MODKEY,			XK_minus,	spawn,		SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY|ShiftMask,		XK_minus,	spawn,		SHCMD("pamixer --allow-boost -d 15; kill -44 $(pidof dwmblocks)") },

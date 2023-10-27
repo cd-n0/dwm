@@ -5,12 +5,12 @@
 #define TERMCLASS "St"
 
 /* appearance */
-static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 20;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 20;       /* vert outer gap between windows and screen edge */
-static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
-static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
+static unsigned int gappih    = 20;       /* horiz inner gap between windows */
+static unsigned int gappiv    = 10;       /* vert inner gap between windows */
+static unsigned int gappoh    = 20;       /* horiz outer gap between windows and screen edge */
+static unsigned int gappov    = 20;       /* vert outer gap between windows and screen edge */
+static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
+static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 
 static unsigned int borderpx  = 3;        /* border pixel of windows */
 static unsigned int snap      = 32;       /* snap pixel */
@@ -91,11 +91,11 @@ static const Layout layouts[] = {
 #define STACKKEYS(MOD,ACTION) \
 	{ MOD, XK_j,     ACTION##stack, {.i = INC(+1) } }, \
 	{ MOD, XK_k,     ACTION##stack, {.i = INC(-1) } }, \
-	//{ MOD, XK_grave, ACTION##stack, {.i = PREVSEL } }, \
-	{ MOD, XK_v,     ACTION##stack, {.i = 0 } }, \
-	//{ MOD, XK_a,     ACTION##stack, {.i = 1 } }, \
-	//{ MOD, XK_z,     ACTION##stack, {.i = 2 } }, \
-	//{ MOD, XK_x,     ACTION##stack, {.i = -1 } },
+	/* { MOD, XK_grave, ACTION##stack, {.i = PREVSEL } }, \
+	 * { MOD, XK_v,     ACTION##stack, {.i = 0 } }, \
+	 * { MOD, XK_a,     ACTION##stack, {.i = 1 } }, \
+	 * { MOD, XK_z,     ACTION##stack, {.i = 2 } }, \
+	 * { MOD, XK_x,     ACTION##stack, {.i = -1 } }, */
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -188,7 +188,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_i,	   setlayout,	   {.v = &layouts[7]} }, /* nrowgrid */
 
 /* music player */
-	{ MODKEY,			XK_m,			spawn,		SHCMD(TERMINAL " -e ncmpcpp") },
+	{ MODKEY,			XK_m,			spawn,		SHCMD(TERMINAL " -e ncmpcpp-ueberzug") },
 	{ MODKEY|ShiftMask,		XK_m,			spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_apostrophe,		spawn,		SHCMD("mpc prev") },
 	{ MODKEY|ShiftMask,		XK_apostrophe,		spawn,		SHCMD("mpc seek 0%") },

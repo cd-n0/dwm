@@ -1865,6 +1865,7 @@ sigterm(int unused)
 	quit(&a);
 }
 
+void
 spawn(const Arg *arg)
 {
 	if (arg->v == dmenucmd)

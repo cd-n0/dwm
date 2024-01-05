@@ -141,6 +141,7 @@ static Key keys[] = {
 	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,                       XK_Return,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,             		XK_w, 	   spawn,          SHCMD("$BROWSER")},
+	{ MODKEY,             		XK_KP_Add, 	   spawn,          SHCMD("boomer")},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
@@ -194,6 +195,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_apostrophe,		spawn,		SHCMD("mpc seek 0%") },
 	{ MODKEY,			XK_backslash,		spawn,		SHCMD("mpc next") },
 	{ MODKEY|ShiftMask,		XK_backslash,		spawn,		SHCMD("mpc repeat") },
+	{ MODKEY|ControlMask,		XK_backslash,		spawn,		SHCMD("mpc single") },
 	{ MODKEY,			XK_p,			spawn,		SHCMD("mpc toggle") },
 	{ MODKEY|ShiftMask,		XK_p,			spawn,		SHCMD("mpc pause ; pauseallmpv") },
 	{ MODKEY,			XK_bracketleft,		spawn,		SHCMD("mpc seek -10") },

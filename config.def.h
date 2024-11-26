@@ -126,10 +126,14 @@ static const Key keys[] = {
     { MODKEY,                       XK_z,               incrgaps,       {.i = +3 } },
     { MODKEY,                       XK_x,               incrgaps,       {.i = -3 } },
 
+    /* Actual fullscreen */
+    { MODKEY,                       XK_f,               togglefullscr,  {0} },
+
     /* Application keys */
     { MODKEY,                       XK_w,               spawn,          SHCMD("$BROWSER")},
     { MODKEY,                       XK_KP_Add,          spawn,          SHCMD("boomer")},
     { MODKEY|ShiftMask,             XK_q,               spawn,          SHCMD("sysact") },
+    { ShiftMask,                    XK_Pause,           spawn,          SHCMD("remaps") },
     { MODKEY|ShiftMask,             XK_d,               spawn,          SHCMD("passmenu") },
     { MODKEY,                       XK_grave,           spawn,          SHCMD("dmenuunicode") },
     /* music player */

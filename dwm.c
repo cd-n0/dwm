@@ -294,6 +294,7 @@ static int xerror(Display *dpy, XErrorEvent *ee);
 static int xerrordummy(Display *dpy, XErrorEvent *ee);
 static int xerrorstart(Display *dpy, XErrorEvent *ee);
 static void xrdb(const Arg *arg);
+static void applydefaultlayouts(void);
 static void zoom(const Arg *arg);
 
 /* variables */
@@ -348,6 +349,25 @@ struct Pertag {
 struct NumTags { char limitexceeded[LENGTH(tags) > 31 ? -1 : 1]; };
 
 /* function implementations */
+void
+applydefaultlayouts()
+{
+    for (Monitor *m = mons; m; m = m->next) {
+        static int i = 0;
+        if (i < LENGTH(default_monitor_layouts)) {
+            /* Refer to createmon() */
+            m->lt[0] = &layouts[default_monitor_layouts[i]];
+            m->lt[1] = &layouts[(default_monitor_layouts[i] + 1) % LENGTH(layouts)];
+            for (int j = 0; j <= LENGTH(tags); j++) {
+                m->pertag->ltidxs[j][0] = m->lt[0];
+                m->pertag->ltidxs[j][1] = m->lt[1];
+            }
+            strncpy(m->ltsymbol, layouts[i].symbol, sizeof(m->ltsymbol));
+        }
+        i++;
+    }
+}
+
 void
 applyrules(Client *c)
 {
@@ -2274,6 +2294,7 @@ updategeom(void)
 			updatebarpos(mons);
 		}
 	}
+    applydefaultlayouts();
 	if (dirty) {
 		selmon = mons;
 		selmon = wintomon(root);

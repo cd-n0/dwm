@@ -73,6 +73,12 @@ static const Layout layouts[] = {
     { NULL,       NULL },
 };
 
+static const int default_monitor_layouts[] = {
+    0, /* Monitor 0 */
+    1, /* Monitor 1 */
+    /* ... */
+};
+
 /* key definitions */
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \

@@ -62,7 +62,6 @@ shiftviewclients(const Arg *arg)
 	shifted.ui = selmon->tagset[selmon->seltags];
 
 	for (c = selmon->clients; c; c = c->next)
-		if (!(c->tags))
 			tagmask = tagmask | c->tags;
 
 

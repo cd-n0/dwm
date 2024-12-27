@@ -295,6 +295,7 @@ static int xerrordummy(Display *dpy, XErrorEvent *ee);
 static int xerrorstart(Display *dpy, XErrorEvent *ee);
 static void xrdb(const Arg *arg);
 static void applydefaultlayouts(void);
+void shiftviewclients(const Arg *arg);
 static void zoom(const Arg *arg);
 
 /* variables */
@@ -349,6 +350,31 @@ struct Pertag {
 struct NumTags { char limitexceeded[LENGTH(tags) > 31 ? -1 : 1]; };
 
 /* function implementations */
+void
+shiftviewclients(const Arg *arg)
+{
+	Arg shifted;
+	Client *c;
+	unsigned int tagmask = 0;
+	shifted.ui = selmon->tagset[selmon->seltags];
+
+	for (c = selmon->clients; c; c = c->next)
+			tagmask = tagmask | c->tags;
+
+
+	if (arg->i > 0)	/* left circular shift */
+		do {
+			shifted.ui = (shifted.ui << arg->i)
+			   | (shifted.ui >> (LENGTH(tags) - arg->i));
+		} while (tagmask && !(shifted.ui & tagmask));
+	else		/* right circular shift */
+		do {
+			shifted.ui = (shifted.ui >> (- arg->i)
+			   | shifted.ui << (LENGTH(tags) + arg->i));
+		} while (tagmask && !(shifted.ui & tagmask));
+	view(&shifted);
+}
+
 void
 applydefaultlayouts()
 {

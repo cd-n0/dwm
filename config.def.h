@@ -112,6 +112,7 @@ static const Key keys[] = {
     { MODKEY,                       XK_period,          focusmon,       {.i = +1 } },
     { MODKEY|ShiftMask,             XK_comma,           tagmon,         {.i = -1 } },
     { MODKEY|ShiftMask,             XK_period,          tagmon,         {.i = +1 } },
+    { MODKEY,                       XK_s,               togglesticky,   {0} },
     TAGKEYS(                        XK_1,                               0)
     TAGKEYS(                        XK_2,                               1)
     TAGKEYS(                        XK_3,                               2)
@@ -152,6 +153,8 @@ static const Key keys[] = {
     { ShiftMask,                    XK_Pause,           spawn,          SHCMD("remaps") },
     { MODKEY|ShiftMask,             XK_d,               spawn,          SHCMD("passmenu") },
     { MODKEY,                       XK_grave,           spawn,          SHCMD("dmenuunicode") },
+    { MODKEY,                       XK_BackSpace,       spawn,          SHCMD("maim -s | xclip -selection clipboard -t image/png") },
+    { MODKEY,                       XK_r,               spawn,          SHCMD(TERMINAL " -e lfub")},
     /* Function keys */
     { MODKEY,                       XK_F1,              spawn,          SHCMD("dmenumount") },
     { MODKEY,                       XK_F2,              spawn,          SHCMD("dmenuumount") },
